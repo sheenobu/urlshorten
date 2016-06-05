@@ -1,2 +1,4 @@
 Export-Package: net.sheenobu.urlshorten.service;version=0.0.1-SNAPSHOT
-
+Private-Package: net.sheenobu.urlshorten.service.internal,\
+	net.sheenobu.urlshorten.service.internal.osgi
+Bundle-Activator: net.sheenobu.urlshorten.service.internal.osgi.Activator

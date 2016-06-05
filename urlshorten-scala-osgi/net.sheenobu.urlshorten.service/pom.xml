@@ -10,5 +10,12 @@
     <artifactId>net.sheenobu.urlshorten.service</artifactId>
     <packaging>bundle</packaging>
 
+	<dependencies>
+		<dependency>
+			<groupId>org.osgi</groupId>
+			<artifactId>org.osgi.core</artifactId>
+		</dependency>
+	</dependencies>
+
 </project>
 
