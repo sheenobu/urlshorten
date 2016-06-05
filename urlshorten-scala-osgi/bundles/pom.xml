@@ -5,6 +5,7 @@
     <groupId>net.sheenobu.urlshorten</groupId>
     <artifactId>net.sheenobu.urlshorten.parent</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <relativePath>../net.sheenobu.urlshorten.parent</relativePath>
   </parent>
   <groupId>net.sheenobu.urlshorten</groupId>
   <artifactId>net.sheenobu.urlshorten.bundles</artifactId>

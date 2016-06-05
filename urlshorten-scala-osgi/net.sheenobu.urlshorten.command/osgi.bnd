@@ -1,0 +1,3 @@
+Private-Package: net.sheenobu.urlshorten.command
+Bundle-Activator: net.sheenobu.urlshorten.command.Activator
+Bundle-Name: URL Shortening Command Interface
