@@ -6,6 +6,7 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
   <modules>
+    <module>net.sheenobu.urlshorten.rest</module>
     <module>net.sheenobu.urlshorten.service</module>
     <module>net.sheenobu.urlshorten.command</module>
     <module>bundles</module>

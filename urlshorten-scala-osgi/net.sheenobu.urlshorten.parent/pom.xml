@@ -62,6 +62,7 @@
               <value>
 				  file:///${project.basedir}/../net.sheenobu.urlshorten.service/target/net.sheenobu.urlshorten.service-0.0.1-SNAPSHOT.jar
 				  file:///${project.basedir}/../net.sheenobu.urlshorten.command/target/net.sheenobu.urlshorten.command-0.0.1-SNAPSHOT.jar
+				  file:///${project.basedir}/../net.sheenobu.urlshorten.rest/target/net.sheenobu.urlshorten.rest-0.0.1-SNAPSHOT.jar
               </value>
             </systemProperty>
           </systemProperties>
