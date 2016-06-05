@@ -69,4 +69,3 @@ class simpleURL(url: java.net.URL, slug: String) extends URL {
 	def GetURL() = url
 }
 
-
