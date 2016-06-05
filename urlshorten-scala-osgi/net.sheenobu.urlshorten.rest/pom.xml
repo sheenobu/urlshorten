@@ -19,6 +19,12 @@
       <type>bundle</type>
     </dependency>
     <dependency>
+      <groupId>net.sheenobu.urlshorten</groupId>
+      <artifactId>net.sheenobu.urlshorten.storage</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
+      <type>bundle</type>
+    </dependency>
+    <dependency>
       <groupId>org.osgi</groupId>
       <artifactId>org.osgi.core</artifactId>
     </dependency>

@@ -3,6 +3,7 @@ package net.sheenobu.urlshorten.rest
 import javax.ws.rs._
 import collection.JavaConverters._
 import net.sheenobu.urlshorten.service._
+import net.sheenobu.urlshorten.storage._
 import com.fasterxml.jackson.annotation._
 
 @JsonCreator
@@ -13,6 +14,8 @@ class URLResource {
 
 	val urlNotFormatted = Map("error" -> "URL not formatted properly").asJava
 	def commonError(e: Exception) = Map("error" -> e.toString()).asJava
+	def commonError(e: String) = Map("error" -> e).asJava
+
 
 	var svc: URLShortenService = null
 
@@ -29,6 +32,7 @@ class URLResource {
 			).asJava
 		}catch{
 			case e: java.net.MalformedURLException => urlNotFormatted
+			case e: UnavailableException => commonError("Service Unavailable")
 		}
 	}
 
@@ -36,16 +40,22 @@ class URLResource {
 	@GET
 	@Produces(Array("application/json"))
 	def getURL(@PathParam("slug") slug: String) = {
-		val url = svc.FindBySlug(slug)
-		if(url == null) {
-			Map(
-				"error" -> "slug not found"
-			).asJava
-		} else {
-			Map(
-				"slug" -> url.GetSlug(),
-				"url" -> url.GetURL().toString()
-			).asJava
+
+		try {
+
+			val url = svc.FindBySlug(slug)
+			if(url == null) {
+				Map(
+					"error" -> "slug not found"
+				).asJava
+			} else {
+				Map(
+					"slug" -> url.GetSlug(),
+					"url" -> url.GetURL().toString()
+				).asJava
+			}
+		}catch{
+			case e: UnavailableException => commonError("Service Unavailable")
 		}
 	}
 }

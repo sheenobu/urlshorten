@@ -1,15 +1,16 @@
 package net.sheenobu.urlshorten.storage.internal
 
 import redis.clients.jedis.{Jedis, Transaction, MultiKeyPipelineBase, Response}
+import redis.clients.jedis.exceptions._
 import redis.clients.jedis.params.Params
 import java.time._
 
 import org.osgi.framework._
 import org.apache.felix.dm._
 
-import net.sheenobu.urlshorten.storage._
+import net.sheenobu.urlshorten.storage.{Storage, URL, UnavailableException}
 
-class RedisStorage extends net.sheenobu.urlshorten.storage.Storage {
+class RedisStorage extends Storage {
 
 	var jedis: Jedis = new Jedis()
 
@@ -38,6 +39,29 @@ class RedisStorage extends net.sheenobu.urlshorten.storage.Storage {
 
 	def generateSlug(url: java.net.URL): String = java.lang.Integer.toString(
 		(Math.random() * 500000 + 100000).asInstanceOf[Int] )
+}
+
+class ExceptionCatchingStorage extends Storage {
+	val redisStorage = new RedisStorage()
+
+	def findBySlug(slug: String): URL = try {
+		redisStorage.findBySlug(slug)
+	} catch {
+		case e: JedisConnectionException => throw new UnavailableException()
+	}
+
+	def create(url: java.net.URL, ttl: Int): URL = try {
+		redisStorage.create(url, ttl)
+	} catch {
+		case e: JedisConnectionException => throw new UnavailableException()
+	}
+
+	def delete(slug: String): Boolean = try {
+		redisStorage.delete(slug)
+	} catch {
+		case e: JedisConnectionException => throw new UnavailableException()
+	}
+
 }
 
 class simpleURL(url: java.net.URL, slug: String) extends URL {

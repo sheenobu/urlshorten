@@ -9,7 +9,7 @@ class Activator extends DependencyActivatorBase {
 
 	def init(ctx: BundleContext, manager: DependencyManager) = {
 		val c = createComponent()
-			.setImplementation(classOf[RedisStorage])
+			.setImplementation(classOf[ExceptionCatchingStorage])
 			.setInterface(classOf[Storage].getName, null)
 
 		manager.add(c)
