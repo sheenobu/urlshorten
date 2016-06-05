@@ -26,10 +26,13 @@ class RedisStorage extends Storage {
 			Instant.now().getEpochSecond())
 
 		var sl = generateSlug(url)
+		var i = 0
 		while(jedis.setnx("urls:" + sl,  url.toString()) == 0) {
 			sl = generateSlug(url)
+			i = i + 1
 		}
 
+		jedis.incrBy("urladmin:collisions", i)
 		jedis.expire(new String("urls:" + sl), seconds.asInstanceOf[Int])
 
 		new simpleURL(url, sl)
