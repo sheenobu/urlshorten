@@ -1,0 +1,4 @@
+Export-Package: net.sheenobu.urlshorten.storage;version=0.0.1
+Private-Package: net.sheenobu.urlshorten.storage.internal
+Bundle-Activator: net.sheenobu.urlshorten.storage.internal.Activator
+Bundle-Name: URL Shortening Storage Service

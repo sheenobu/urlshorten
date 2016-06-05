@@ -1,5 +1,7 @@
 package net.sheenobu.urlshorten.service;
 
+import net.sheenobu.urlshorten.storage.URL;
+
 public interface URLShortenService {
 	public URL FindBySlug(String slug);
 

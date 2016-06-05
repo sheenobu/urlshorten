@@ -1,4 +1,4 @@
-package net.sheenobu.urlshorten.service;
+package net.sheenobu.urlshorten.storage;
 
 public interface URL {
   public String GetSlug();
