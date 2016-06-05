@@ -1,8 +1,18 @@
 package net.sheenobu.urlshorten.service.internal.osgi;
 
-import org.osgi.framework.{BundleActivator, BundleContext}
+import org.osgi.framework.{BundleContext}
+import org.apache.felix.dm.{DependencyManager, DependencyActivatorBase}
 
-class Activator extends BundleActivator {
-   def start(x: BundleContext): Unit = ???
-   def stop(x: BundleContext): Unit = ???
+import net.sheenobu.urlshorten.service._
+import net.sheenobu.urlshorten.service.internal._
+
+class Activator extends DependencyActivatorBase {
+   def init(ctx: BundleContext, manager: DependencyManager) {
+      manager.add(createComponent()
+	    .setInterface(classOf[URLShortenService].getName(), null)
+		.setImplementation(classOf[URLShortener]))
+   }
+   def destroy(ctx: BundleContext, manager: DependencyManager) {
+
+   }
 }
