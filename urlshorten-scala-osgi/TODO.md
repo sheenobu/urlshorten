@@ -1,5 +1,6 @@
 # urlshorten-scala-osgi - TODO
 
+ * base64 encode the slugs
  * Send 404, 500 where appropriate
  * Translate manual JAX-RS exception handling code to use JAX-RS features
  * OBR auto-deploy runtime dependencies / document required OBR commands
