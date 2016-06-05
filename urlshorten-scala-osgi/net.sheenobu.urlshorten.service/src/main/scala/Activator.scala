@@ -12,7 +12,4 @@ class Activator extends DependencyActivatorBase {
 	    .setInterface(classOf[URLShortenService].getName(), null)
 		.setImplementation(classOf[URLShortener]))
    }
-   def destroy(ctx: BundleContext, manager: DependencyManager) {
-
-   }
 }

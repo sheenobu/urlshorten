@@ -30,7 +30,4 @@ class Activator extends DependencyActivatorBase {
       manager.add(comp)
    }
 
-   def destroy(ctx: BundleContext, manager: DependencyManager) {
-
-   }
 }
