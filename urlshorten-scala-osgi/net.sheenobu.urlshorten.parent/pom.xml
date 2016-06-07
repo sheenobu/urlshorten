@@ -4,7 +4,7 @@
   <parent>
     <groupId>net.sheenobu</groupId>
     <artifactId>osgi-parent</artifactId>
-    <version>2016-06-05</version>
+    <version>2016-06-07</version>
     <relativePath>../net.sheenobu.parent/pom.xml</relativePath>
   </parent>
   <groupId>net.sheenobu.urlshorten</groupId>
@@ -30,6 +30,14 @@
       <plugin>
         <groupId>org.scala-tools</groupId>
         <artifactId>maven-scala-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.felix</groupId>
+        <artifactId>maven-bundle-plugin</artifactId>
+        <extensions>true</extensions>
+        <configuration>
+          <obrRepository>${project.basedir}/../obr</obrRepository>
+        </configuration>
       </plugin>
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
@@ -59,7 +67,7 @@
             </systemProperty>
             <systemProperty>
               <key>obr.repository.url</key>
-              <value>http://repository.amdatu.org/release/index.xml http://repository.amdatu.org/dependencies/index.xml</value>
+              <value>http://repository.amdatu.org/release/index.xml http://repository.amdatu.org/dependencies/index.xml file:///${project.basedir}/../obr/repository.xml</value>
             </systemProperty>
             <systemProperty>
               <key>felix.auto.start.1</key>
