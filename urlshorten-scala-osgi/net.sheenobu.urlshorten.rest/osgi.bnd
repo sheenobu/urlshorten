@@ -1,3 +1,2 @@
 Private-Package: net.sheenobu.urlshorten.rest
 Bundle-Activator: net.sheenobu.urlshorten.rest.Activator
-Bundle-Name: URL Shortening REST interface

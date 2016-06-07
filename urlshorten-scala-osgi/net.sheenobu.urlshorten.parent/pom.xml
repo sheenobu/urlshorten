@@ -67,16 +67,7 @@
             </systemProperty>
             <systemProperty>
               <key>obr.repository.url</key>
-              <value>http://repository.amdatu.org/release/index.xml http://repository.amdatu.org/dependencies/index.xml file:///${project.basedir}/../obr/repository.xml</value>
-            </systemProperty>
-            <systemProperty>
-              <key>felix.auto.start.1</key>
-              <value>
-				  file:///${project.basedir}/../net.sheenobu.urlshorten.service/target/net.sheenobu.urlshorten.service-0.0.1-SNAPSHOT.jar
-				  file:///${project.basedir}/../net.sheenobu.urlshorten.command/target/net.sheenobu.urlshorten.command-0.0.1-SNAPSHOT.jar
-				  file:///${project.basedir}/../net.sheenobu.urlshorten.rest/target/net.sheenobu.urlshorten.rest-0.0.1-SNAPSHOT.jar
-				  file:///${project.basedir}/../net.sheenobu.urlshorten.storage/target/net.sheenobu.urlshorten.storage-0.0.1-SNAPSHOT.jar
-              </value>
+              <value>http://repository.amdatu.org/release/index.xml http://repository.amdatu.org/dependencies/index.xml file:///${project.basedir}/../bundles/target/index.xml</value>
             </systemProperty>
           </systemProperties>
           <arguments>
