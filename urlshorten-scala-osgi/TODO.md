@@ -4,6 +4,7 @@
  * Send 404, 500 where appropriate
  * Translate manual JAX-RS exception handling code to use JAX-RS features
  * OBR auto-deploy runtime dependencies / document required OBR commands
+ * Create OBR in bundles/ directory, point runtime to OBR
  * Unit tests
  * Create seperate, non-OSGI bundle API jar
  * Microservice stuff:

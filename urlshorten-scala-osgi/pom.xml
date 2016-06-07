@@ -8,7 +8,7 @@
   <modules>
     <module>net.sheenobu.urlshorten.rest</module>
     <module>net.sheenobu.urlshorten.service</module>
-    <module>net.sheenobu.urlshorten.command</module>
+	<module>net.sheenobu.urlshorten.command</module>
     <module>net.sheenobu.urlshorten.storage</module>
     <module>bundles</module>
   </modules>

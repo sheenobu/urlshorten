@@ -4,40 +4,18 @@
   <parent>
     <groupId>net.sheenobu</groupId>
     <artifactId>osgi-parent</artifactId>
-    <version>2016-06-07</version>
+    <version>2016-06-05</version>
     <relativePath>../net.sheenobu.parent/pom.xml</relativePath>
   </parent>
   <groupId>net.sheenobu.urlshorten</groupId>
   <artifactId>net.sheenobu.urlshorten.parent</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>net.sheenobu.urlshorten</groupId>
-        <artifactId>net.sheenobu.urlshorten.service</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
-      </dependency>
-      <dependency>
-        <groupId>net.sheenobu.urlshorten</groupId>
-        <artifactId>net.sheenobu.urlshorten.command</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
   <build>
     <plugins>
       <plugin>
         <groupId>org.scala-tools</groupId>
         <artifactId>maven-scala-plugin</artifactId>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.felix</groupId>
-        <artifactId>maven-bundle-plugin</artifactId>
-        <extensions>true</extensions>
-        <configuration>
-          <obrRepository>${project.basedir}/../obr</obrRepository>
-        </configuration>
       </plugin>
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
@@ -65,8 +43,7 @@
               <key>felix.log.level</key>
               <value>1</value>
             </systemProperty>
-            <systemProperty>
-              <key>obr.repository.url</key>
+            <systemProperty><key>obr.repository.url</key> HEAD
               <value>http://repository.amdatu.org/release/index.xml http://repository.amdatu.org/dependencies/index.xml file:///${project.basedir}/../bundles/target/index.xml</value>
             </systemProperty>
           </systemProperties>
